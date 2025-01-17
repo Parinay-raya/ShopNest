@@ -21,13 +21,15 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('/assets/images/hero\ background\ photo.jpg'); /* Add your background image path here */
+    background-image: url('/assets/images/hero-bg.png'); /* Add your background image path here */
     background-size: cover;
     background-position: center;
     color: #FCFFE7; /* Light Yellow for text */
     text-align: center;
     padding: 80px 20px;
     position: relative;
+    height: 450px;
+ 
 }
 
 .hero-section::before {
@@ -44,16 +46,20 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
+    margin-right: 100px;
+    
 }
 
 .hero-content h2 {
     font-size: 3em;
     margin-bottom: 20px;
+    
 }
 
 .hero-content p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    
 }
 
 .hero-content .btn {
