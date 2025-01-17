@@ -1,0 +1,109 @@
+/* Body and Background */
+body {
+    background-color: #FCFFE7; /* Light Yellow for background */
+    color: #2B3467; /* Dark Blue text for contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2B3467; /* Dark Blue for navbar */
+}
+
+.navbar-brand, .nav-link {
+    color: #FCFFE7; /* Light Yellow text */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #EB455F; /* Pink hover effect */
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-image: url('/assets/images/hero\ background\ photo.jpg'); /* Add your background image path here */
+    background-size: cover;
+    background-position: center;
+    color: #FCFFE7; /* Light Yellow for text */
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: rgba(43, 52, 103, 0.5); Dark Blue with opacity */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    background-color: #EB455F; /* Pink button */
+    color: #FCFFE7; /* Light Yellow text */
+    padding: 12px 30px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.hero-content .btn:hover {
+    background-color: #2B3467; /* Dark Blue on hover */
+    color: #FCFFE7; /* Light Yellow text on hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #2B3467; /* Dark Blue for footer */
+    color: #FCFFE7; /* Light Yellow text */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Additional Styles for other elements */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+/* Form Styles */
+form input, form button {
+    border-radius: 20px;
+    margin: 5px;
+}
+
+/* Other UI elements */
+.btn-outline-success {
+    color: #2B3467;
+    border-color: #2B3467;
+}
+
+.btn-outline-success:hover {
+    background-color: #2B3467;
+    color: #FCFFE7;
+}
+
