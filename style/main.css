@@ -1,35 +1,51 @@
 /* Body and Background */
 body {
-    background-color: #FCFFE7; /* Light Yellow for background */
-    color: #2B3467; /* Dark Blue text for contrast */
+    background-color: #FCFFE7;
+    /* Light Yellow for background */
+    color: #2B3467;
+    /* Dark Blue text for contrast */
     font-family: 'Arial', sans-serif;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #2B3467; /* Dark Blue for navbar */
+    background-color: #2B3467;
+ 
+    /* Dark Blue for navbar */
 }
 
-.navbar-brand, .nav-link {
-    color: #FCFFE7; /* Light Yellow text */
+.navbar-brand,
+.nav-link {
+    color: #FCFFE7;
+    
+    /* Light Yellow text */
 }
+
+
 
 .navbar-nav .nav-link:hover {
-    color: #EB455F; /* Pink hover effect */
+    color: #EB455F !important; /* Pink color on hover */
+    text-decoration: underline;
+  
+}
+.navbar ul li{
+    padding-right: 10px;
 }
 
 
 /* Hero Section */
 .hero-section {
-    background-image: url('/assets/images/hero-bg.png'); /* Add your background image path here */
+    background-image: url('/assets/images/hero-bg.png');
+    /* Add your background image path here */
     background-size: cover;
     background-position: center;
-    color: #FCFFE7; /* Light Yellow for text */
+    color: #FCFFE7;
+    /* Light Yellow for text */
     text-align: center;
     padding: 80px 20px;
     position: relative;
     height: 450px;
- 
+
 }
 
 .hero-section::before {
@@ -47,24 +63,26 @@ body {
     position: relative;
     z-index: 2;
     margin-right: 100px;
-    
+
 }
 
 .hero-content h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    
+
 }
 
 .hero-content p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    
+
 }
 
 .hero-content .btn {
-    background-color: #EB455F; /* Pink button */
-    color: #FCFFE7; /* Light Yellow text */
+    background-color: #EB455F;
+    /* Pink button */
+    color: #FCFFE7;
+    /* Light Yellow text */
     padding: 12px 30px;
     font-size: 1.1em;
     text-decoration: none;
@@ -72,15 +90,19 @@ body {
 }
 
 .hero-content .btn:hover {
-    background-color: #2B3467; /* Dark Blue on hover */
-    color: #FCFFE7; /* Light Yellow text on hover */
+    background-color: #2B3467;
+    /* Dark Blue on hover */
+    color: #FCFFE7;
+    /* Light Yellow text on hover */
 }
 
 
 /* Footer */
 footer {
-    background-color: #2B3467; /* Dark Blue for footer */
-    color: #FCFFE7; /* Light Yellow text */
+    background-color: #2B3467;
+    /* Dark Blue for footer */
+    color: #FCFFE7;
+    /* Light Yellow text */
     text-align: center;
     padding: 20px 0;
 }
@@ -97,7 +119,8 @@ ul li {
 }
 
 /* Form Styles */
-form input, form button {
+form input,
+form button {
     border-radius: 20px;
     margin: 5px;
 }
@@ -113,3 +136,41 @@ form input, form button {
     color: #FCFFE7;
 }
 
+
+
+
+/* cart styles
+.cart-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2B3467;
+    color: white;
+}
+
+#checkout-btn {
+    background-color: #EB455F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #C6324E;
+} */

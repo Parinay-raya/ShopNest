@@ -7,39 +7,60 @@
     <title>ShopNest - Home</title>
     <link rel="stylesheet" href="/style/main.css">
     <!-- Add Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">ShopNest</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item" id="user-auth"></li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+  
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3"> <!-- Adjusted padding -->
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="index.html">ShopNest</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item" id="user-auth"></li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- JavaScript to Highlight Active Page -->
+<script>
+    // Get current page URL
+    let currentPage = window.location.pathname.split("/").pop(); 
+
+    // Select all navbar links
+    let navLinks = document.querySelectorAll(".nav-link");
+
+    // Remove 'active' class from all links and add it only to the current page
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active", "fw-bold"); // Add active class and bold font
+        } else {
+            link.classList.remove("active", "fw-bold");
+        }
+    });
+</script>
+
 
     <!-- Hero Section -->
     <header class="hero-section ">
