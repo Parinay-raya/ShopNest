@@ -1,0 +1,135 @@
+To implement **Login with Google** functionality in your **web development project (ShopNest)** using HTML, CSS, and JavaScript, you can integrate **Google Sign-In**. Below are the steps to achieve this:
+
+---
+
+### **1. Set Up a Google Cloud Project**
+To enable Google Sign-In, you first need to create a project in Google Cloud and get the required credentials.
+
+1. **Go to the Google Cloud Console:**  
+   [Google Cloud Console](https://console.cloud.google.com/)
+
+2. **Create a New Project:**
+   - Click on **New Project**.
+   - Give your project a name (e.g., `ShopNest`) and click **Create**.
+
+3. **Enable the Google API:**
+   - Go to the **APIs & Services > Library**.
+   - Search for **Google Identity Services API** and enable it.
+
+4. **Create OAuth 2.0 Credentials:**
+   - Navigate to **APIs & Services > Credentials**.
+   - Click **Create Credentials** > **OAuth Client ID**.
+   - Select **Web Application**.
+   - Under **Authorized Redirect URIs**, add:
+     - `http://localhost:3000` (for local development).
+     - Your live website URL (e.g., `https://shopnest.com`).
+
+   - After creation, note down your **Client ID**.
+
+---
+
+### **2. Add the Google Sign-In Library to Your HTML**
+Add the Google Identity Services script to your HTML file.
+
+```html
+<!-- Include Google Sign-In script -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+```
+
+---
+
+### **3. Create an HTML Element for the Google Sign-In Button**
+Add a container for the Google Sign-In button in your HTML file.
+
+```html
+<div id="g_id_onload"
+     data-client_id="YOUR_GOOGLE_CLIENT_ID"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="handleCredentialResponse"
+     data-auto_select="true">
+</div>
+
+<div class="g_id_signin" data-type="standard"></div>
+```
+
+Replace `YOUR_GOOGLE_CLIENT_ID` with the **Client ID** from the Google Cloud Console.
+
+---
+
+### **4. Handle the Login Response**
+You need a JavaScript function to handle the login response and retrieve user details.
+
+```html
+<script>
+  function handleCredentialResponse(response) {
+    // Decode the JWT token to access user information
+    const data = jwt_decode(response.credential);
+
+    console.log("ID Token:", response.credential);
+    console.log("User Info:", data);
+
+    // Show the user's name or email in your UI
+    document.getElementById("user-info").innerHTML = `
+      <h3>Welcome, ${data.name}!</h3>
+      <p>Email: ${data.email}</p>
+    `;
+  }
+
+  // Load the JWT library (you can include this in your project)
+  function loadJwtLibrary() {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js";
+    document.head.appendChild(script);
+  }
+
+  // Load the library dynamically
+  window.onload = loadJwtLibrary;
+</script>
+```
+
+---
+
+### **5. Display User Info After Login**
+You can dynamically show user information or redirect the user to a dashboard after successful login.
+
+```html
+<div id="user-info"></div>
+```
+
+---
+
+### **6. Styling the Sign-In Button**
+You can style the Google Sign-In button using CSS:
+
+```css
+.g_id_signin {
+  margin-top: 20px;
+}
+```
+
+---
+
+### **7. Run Your Project**
+1. Run your project locally or on a server.
+2. Test the Google Sign-In functionality by clicking the button.
+
+---
+
+### **8. Optional: Add Logout Functionality**
+To let users log out, you can clear their session or token.
+
+```html
+<button onclick="logout()">Logout</button>
+
+<script>
+  function logout() {
+    document.getElementById("user-info").innerHTML = "";
+    alert("Logged out successfully!");
+  }
+</script>
+```
+
+---
+
+This implementation will allow users to log in to your ShopNest project using their Google accounts. Let me know if you need further help! 😊
