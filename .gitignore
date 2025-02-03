@@ -2,7 +2,7 @@
 node_modules/
 
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 
@@ -32,3 +32,5 @@ Thumbs.db
 # Other common temporary files
 *.bak
 *.swp
+
+
