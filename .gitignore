@@ -28,6 +28,7 @@ Thumbs.db
 
 # Google API Credentials or other sensitive data
 *.json
+!backend/package.json
 
 # Other common temporary files
 *.bak
