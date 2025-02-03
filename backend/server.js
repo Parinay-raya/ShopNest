@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth');
+//const authRoutes = require('./routes/auth');
+const app = express();
+const authRoutes = require('./routes/auth'); 
 
 dotenv.config();
-const app = express();
+//const app = express();
 app.use(express.json());
 
 // Connect to MongoDB
@@ -13,8 +15,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch(err => console.log(err));
 
 // API routes
-app.use('/api/auth', authRoutes);
+app.use(express.json()); // ✅ Enable JSON parsing
+app.use('/api/auth', authRoutes); // ✅ Use the router correctly
 
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

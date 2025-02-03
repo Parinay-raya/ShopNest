@@ -37,4 +37,19 @@
   //     alert(data.message || data.error);
   //   }
   // });
+  const express = require('express');
+const router = express.Router();
+
+// Define routes
+router.post('/login', (req, res) => {
+    res.send('Login route');
+});
+
+router.post('/signup', (req, res) => {
+    res.send('Signup route');
+});
+
+// ✅ Correct export
+module.exports = router;
+
   
