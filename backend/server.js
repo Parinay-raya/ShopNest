@@ -13,6 +13,12 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
+  
+  
+  app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 
 // API routes
 app.use(express.json()); // ✅ Enable JSON parsing
